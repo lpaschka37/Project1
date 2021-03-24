@@ -43,13 +43,11 @@ function callNpAPI() {
     const requestUrl = new URL(link);
 
     //requestUrl.append( format.val() );
-    requestUrl.searchParams.append("stateCode", "MN");
-    requestUrl.searchParams.append("limit", "5");
+    requestUrl.searchParams.append("stateCode", "CA");
+    requestUrl.searchParams.append("limit", "20");
     requestUrl.searchParams.append("api_key", "6SDR47MbfpKKDCjjWmITe9DOzwm3YU790sDLbeQZ" );
 
     console.log(requestUrl);
-
-    const url = "http://api.amp.active.com/camping/campgrounds/?pstate=MN&siteType=10001&api_key=qvcnk87rmp9txeyryqxjpwrb"
 
     fetch(requestUrl)
     .then(function (response) {
@@ -60,5 +58,31 @@ function callNpAPI() {
     });
 }
 
+function callCampsiteAPI() {
+    var link = "https://ridb.recreation.gov/api/v1/campsites";
+    const requestUrl = new URL(link);
+
+    //requestUrl.append( format.val() );
+    requestUrl.searchParams.append("limit", "20");
+    requestUrl.searchParams.append("offset", "0");
+    //requestUrl.searchParams.append("api_key", "830595a4-7200-403c-8877-66d4e954ce03")
+
+    console.log(requestUrl);
+
+    fetch(requestUrl, {
+        headers: {
+            'x-api-key': '830595a4-7200-403c-8877-66d4e954ce03',
+            'Accept': 'application/json'
+        }
+    })
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        console.log(data);
+    });
+}
+
 callNpAPI();
+callCampsiteAPI();
 //callCampAPI();
