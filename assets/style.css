@@ -1,3 +1,35 @@
 * {
     display: block;
 }
+
+h1, h2, h3, h4, h5 {
+    font-weight:bold;
+}
+
+h1 {
+    color: #f3f3f3;
+}
+
+.hero {
+    background-image: url("./images/Bryce_Canyon.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.cust-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    /* border: 1px solid rgba(0,0,0,.125); */
+    border-radius: .25rem;
+}
+
+.bg-dark {
+    background-color:#343a40;
+    color: #16ff50;
+}
