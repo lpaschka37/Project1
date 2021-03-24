@@ -14,7 +14,7 @@ First group project
 AS A traveler
 I WANT to see various campground sites near me.
 I WANT to see local weather conditions.
-I WANT to calculate distance.
+I WANT to calculate distance from current to campground.
 SO THAT I can plan a trip accordingly.
 
 ```
