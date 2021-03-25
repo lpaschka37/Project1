@@ -131,6 +131,7 @@ function orderArray(array) {
 function displayCampsites(campSites) {
     for (i=0; i<12; i++) {
         var card = $("<div>");
+        card.attr("class", "cust-card col-lg-4 col-md-6 col-sm-12");
         campsiteRow.append(card);
         var imageUrl = "";
         var imageAlt = "";
@@ -139,17 +140,15 @@ function displayCampsites(campSites) {
             imageAlt = "Placeholder Image"
         }
         else {
-            imageurl = campSites[i].image[0].url;
+            imageUrl = campSites[i].image[0].url;
             imageAlt = campSites[i].image[0].altText;
         }
         card.html(`
-            <div class="cust-card col-sm-12 col-md-4">
-                <img src="${imageurl}" class="card-img-top" alt="${imageAlt}">
-                <div class="card-body">
-                    <h5 class="card-title">${campSites[i].parkName}</h5>
-                    <p class="card-text">${campSites[i].description}</p>                        
-                    <a href="main.html" class="btn btn-primary">Go somewhere</a>
-                </div>
+            <img src="${imageUrl}" class="card-img-top" alt="${imageAlt}">
+            <div class="card-body">
+                <h5 class="card-title">${campSites[i].parkName}</h5>
+                <p class="card-text">${campSites[i].description}</p>                        
+                <a href="main.html" class="btn btn-primary">Go somewhere</a>
             </div>
         `)
     }
