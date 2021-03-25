@@ -148,7 +148,7 @@ function displayCampsites(campSites) {
             <div class="card-body">
                 <h5 class="card-title">${campSites[i].parkName}</h5>
                 <p class="card-text">${campSites[i].description}</p>                        
-                <a href="main.html" class="btn btn-primary">Go somewhere</a>
+                <a href="main.html" class="btn btn-primary">Get Details</a>
             </div>
         `)
     }
