@@ -44,8 +44,7 @@ function callNpAPI() {
     const requestUrl = new URL(link);
 
     //requestUrl.append( format.val() );
-    requestUrl.searchParams.append("stateCode", "CA");
-    requestUrl.searchParams.append("limit", "600");
+    requestUrl.searchParams.append("limit", "601");
     requestUrl.searchParams.append("api_key", "6SDR47MbfpKKDCjjWmITe9DOzwm3YU790sDLbeQZ" );
 
     console.log(requestUrl);
@@ -99,9 +98,13 @@ function populateDistArray(array) {
 
         var dist = calculateDistance(parseInt(cityLat), parseInt(cityLon), parseInt(campSites[i].lat), parseInt(campSites[i].lon));
         dist /= 1609; //convert to miles
-        campSites[i].dist = dist;
+        if(isNaN(dist)) {
+            campSites[i].dist = 1000000000;
+        }
+        else {
+            campSites[i].dist = dist;
+        }
     }
-    //console.log(campSites);
     console.log(orderArray(campSites));
 }
 
@@ -129,6 +132,7 @@ function orderArray(array) {
 
 //displays campsite data on the homepage
 function displayCampsites(campSites) {
+    campsiteRow.children().remove();
     for (i=0; i<12; i++) {
         var card = $("<div>");
         card.attr("class", "cust-card col-lg-4 col-md-6 col-sm-12");
@@ -159,12 +163,7 @@ campsiteRow.on("click", "#go", transferData);
 function transferData(event) {
     console.log("test");
     var index = ($(this).parent().children().eq(2)).attr("index");
-    infoTransfer = {
-        lat: campSites[index].lat,
-        lon: campSites[index].lon,
-        parkId: campSites[index].campid
-    };
-    console.log(infoTransfer);
-    url = "main.html?lat=" + campSites[index].lat + "&lon=" + campSites[index].lon + "&id=" +campSites[index].campid;
+
+    url = "main.html?lat=" + campSites[index].lat + "&lon=" + campSites[index].lon + "&id=" +campSites[index].campid +"&name=" +campSites[index].parkName;
     document.location.href = url;
 }
