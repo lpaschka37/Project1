@@ -144,7 +144,7 @@ function displayCampsites(campSites) {
             imageAlt = campSites[i].image[0].altText;
         }
         card.html(`
-            <img src="${imageUrl}" class="card-img-top" alt="${imageAlt}">
+            <img src="${imageUrl}" class="card-img-height card-img-top" alt="${imageAlt}">
             <div class="card-body">
                 <h5 class="card-title">${campSites[i].parkName}</h5>
                 <p class="card-text">${campSites[i].description}</p>                        
