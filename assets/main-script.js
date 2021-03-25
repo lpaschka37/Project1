@@ -13,6 +13,14 @@ window.onload = function () {
 globalData = window.onload();
 console.log(globalData);
 
+<<<<<<< HEAD
+=======
+var campgroundName = globalData.name;
+var parkName = globalData.id;
+
+
+  //MAPS SECTION
+>>>>>>> main
   //lat and long for intial page load
 	var parkLat = parseFloat(globalData.lat);
   var parkLon = parseFloat(globalData.lon);
@@ -136,4 +144,4 @@ console.log(globalData);
         markersArray = [];
       }
 	  //Google Distance Matrix API end
-	  //Google Distance Matrix API end
+    //MAPS END
