@@ -1,13 +1,15 @@
-* {
-    display: block;
-}
-
 h1, h2, h3, h4, h5 {
     font-weight:bold;
 }
 
 h1 {
     color: #f3f3f3;
+}
+
+hr {
+    border: 1px solid gray;
+    width: 100%;
+    margin: 0px 15px 25px;
 }
 
 .hero {
@@ -35,5 +37,49 @@ h1 {
 }
 
 .card-img-height {
+    height: 250px;
     width: 100%;
+}
+
+.display-height {
+    height: 400px;
+    width: 100%;
+}
+
+.src-btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;    
+    user-select: none;
+    background-color: #28a745;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.src-btn:hover {
+    background-color: #00ff00;
+    color: black;
+    
+}
+
+.form-ctrl {
+    display: inline-block;
+    vertical-align: middle;    
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
