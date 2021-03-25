@@ -11,7 +11,7 @@ h1 {
 }
 
 .hero {
-    background-image: url("./images/Bryce_Canyon.jpg");
+    background-image: url("./images/bwca_hero_image.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -25,11 +25,15 @@ h1 {
     word-wrap: break-word;
     background-color: #fff;
     background-clip: border-box;
-    /* border: 1px solid rgba(0,0,0,.125); */
     border-radius: .25rem;
+    margin-bottom: 25px;
 }
 
-.bg-dark {
-    background-color:#343a40;
+.bg-black {
+    background-color:#000000;
     color: #16ff50;
+}
+
+.card-img-height {
+    width: 100%;
 }
