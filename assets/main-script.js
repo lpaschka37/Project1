@@ -13,51 +13,43 @@ window.onload = function () {
 globalData = window.onload();
 console.log(globalData);
 
-  
   //lat and long for intial page load
-	var lat1 = globalData.lat; //came from Google Maps API example. Made it global so all API calls could share
-	var long1 = globalData.lon; //came from Google Maps API example. Made it global so all API calls could share
-	var city = "Stillwater"; //came from Google Maps API example. Made it global so all API calls could share
-	var state = "MN";//came from Google Maps API example. Made it global so all API calls could share
-	
+	var parkLat = parseFloat(globalData.lat);
+  var parkLon = parseFloat(globalData.lon);
+  var lat1 = parkLat;
+	var long1 = parkLon;
+
 	//Geolocation API Start (gets user coordinates)
 	//Came from w3 schools example. Modified for project
-	 function getLocation() {
-		  if (navigator.geolocation) {
-			navigator.geolocation.getCurrentPosition(showPosition);
-		  } else { 
-			//x.innerHTML = "Geolocation is not supported by this browser.";
-		  }
-		}
-		function showPosition(position) {
-		 lat1=position.coords.latitude; //passes user location to distance matrix API
-		 long1=position.coords.longitude; //passes user location to distance matrix API
-		 console.log(position.coords.latitude); //for debugging
-		 console.log(position.coords.longitude);  
-		 console.log(lat1);
-		 console.log(long1);	
+  navigator.geolocation.getCurrentPosition(success, error);
 
-		document.getElementById("map").classList.remove("hide"); //make pre-loaded elements visible
-		//document.getElementById("output").classList.remove("hide");	
-		//document.getElementById("weatherContainer").classList.remove("hide");	
-		
-		 initMap(); //reload map with user geolocation data 
-		}
+  function success(pos) {
+    var crd = pos.coords;
+    console.log("test");
+
+    lat1 = crd.latitude;
+    long1 = crd.longitude;
+    initMap();
+  }
+  
+  function error(err) {
+    console.warn(`ERROR(${err.code}): ${err.message}`);
+    alert("You dont have your location enabled in this browser.")
+  }
 		//Geolocation API end
+  initMap();
 		
 		//Google Distance Matrix API start (get distance and time between addresses)
 		//Came from Google maps API documentation. Variables and objects changed for current project. 
 		//Had to enable multiple APIs within Google Maps API
       function initMap() {	   
-	    const bounds = new google.maps.LatLngBounds();
+	      const bounds = new google.maps.LatLngBounds();
         const markersArray = [];
-		console.log(lat1);
-		 console.log(long1);	
 
         var origin1 = { lat: lat1, lng: long1 };
-		console.log(origin1);
+		    console.log(origin1);
 		
-        var destinationA = city + ", " + state;
+        var destinationA = { lat: parkLat, lng: parkLon};
        
         const destinationIcon =
           "https://chart.googleapis.com/chart?" +
