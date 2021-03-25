@@ -1,6 +1,22 @@
-	//lat and long for intial page load
-	var lat1 = 44.9;//came from Google Maps API example. Made it global so all API calls could share
-	var long1 = -93.2;//came from Google Maps API example. Made it global so all API calls could share
+window.onload = function () {
+  var url = document.location.href,
+      params = url.split('?')[1].split('&'),
+      data = {}, tmp;
+  for (var i = 0, l = params.length; i < l; i++) {
+       tmp = params[i].split('=');
+       data[tmp[0]] = tmp[1];
+  }
+  console.log(data);
+  globalData = data;
+  return globalData;
+}
+globalData = window.onload();
+console.log(globalData);
+
+  
+  //lat and long for intial page load
+	var lat1 = globalData.lat; //came from Google Maps API example. Made it global so all API calls could share
+	var long1 = globalData.lon; //came from Google Maps API example. Made it global so all API calls could share
 	var city = "Stillwater"; //came from Google Maps API example. Made it global so all API calls could share
 	var state = "MN";//came from Google Maps API example. Made it global so all API calls could share
 	

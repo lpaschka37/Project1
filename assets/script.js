@@ -148,8 +148,23 @@ function displayCampsites(campSites) {
             <div class="card-body">
                 <h5 class="card-title">${campSites[i].parkName}</h5>
                 <p class="card-text">${campSites[i].description}</p>                        
-                <a href="main.html" class="btn btn-primary">Get Details</a>
+                <a id="go" index="${i}" class="btn btn-primary">Get Details</a>
             </div>
         `)
     }
+}
+
+campsiteRow.on("click", "#go", transferData);
+
+function transferData(event) {
+    console.log("test");
+    var index = ($(this).parent().children().eq(2)).attr("index");
+    infoTransfer = {
+        lat: campSites[index].lat,
+        lon: campSites[index].lon,
+        parkId: campSites[index].campid
+    };
+    console.log(infoTransfer);
+    url = "main.html?lat=" + campSites[index].lat + "&lon=" + campSites[index].lon + "&id=" +campSites[index].campid;
+    document.location.href = url;
 }
