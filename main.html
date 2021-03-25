@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Campground Locator</title>
+    <title>Camp Finder</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/style.css">    
 </head>
@@ -13,7 +13,7 @@
         <nav class="navbar navbar-dark bg-black">
             <a class="navbar-brand" style="color:#16ff50" href="index.html">
                 <img src="./assets/images/pinetreeSVG.png" width="30" height="30" class="d-inline-block align-top" alt="campground_locator_icon">
-                Campground Locator
+                Camp Finder
             </a>
             </nav>
     </header>
@@ -21,13 +21,7 @@
         <div class="hero jumbotron jumbotron-fluid">
             <div class="container">
             <h1 class="display-4">Campground Name</h1>
-            <p class="lead"><span style="color: white;">This campground is awesome!!</span></p>
-            <!-- <form class="form-inline my-2 my-lg-0">
-                <div>
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </div>
-            </form> -->
+                <p class="lead"><span style="color: white;">This campground is awesome!!</span></p>
             </div>
         </div>
         <div class="container">
@@ -49,39 +43,25 @@
             <!--map card-->
             <div class="cust-card col-md-6 col-sm-12">
             <h5 class="card-title">Directions</h5>    
-           <!-- <img src="./assets/images/google_map.png" class="display-height card-img-top" alt="placeholder">-->
-
-                <button onclick="getLocation()">Get Distance</button><!--KL Temporary button until campsite API is connected-->
-        
-                <div id="output"></div> <!--KL Map distance and duration data goes here -->
-                
-                <div id="map" style="height: 100%;"></div><!--KL This is where the map displays. I had to use inline styling because it was inheriting styles from somewhere making the height 0-->
-
-                <!-- <div class="card-body">                    
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div> -->
+            <!-- <button onclick="getLocation()">Get Distance</button> KL Temporary button until campsite API is connected -->
+            <div id="output"></div> <!-- KL Map distance and duration data goes here -->
+                <!--map displays here-->
+                <div id="map" class="display-height card-img-top"></div>
             </div>
             
                 <!--weather card-->
             <div class="cust-card col-md-6 col-sm-12">
             <h5 class="card-title">Current Weather</h5>    
             <img src="./assets/images/weather-forecast-background.png" class="display-height card-img-top" alt="placeholder">
-                <!--<div class="card-body">
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>-->
+                
             </div>    
         </div>
     </main>
     <footer>
         <div class="card text-center">
-            <!-- <div class="card-header">
-              Campground Locator
-            </div> -->
             <div class="card-body bg-black">
               <h5 class="card-title">Special title treatment</h5>
               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
             </div>
          </div>
     </footer>
