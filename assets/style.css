@@ -188,3 +188,27 @@ hr {
     line-height: 20px;
     /* padding: 0px; */
 }
+
+.low {
+    background-color: #079607;
+    border: #079607 solid 1px;
+    border-radius: 5px;
+}
+
+.moderate {
+    background-color: #e0ee1a;
+    border: #e0ee1a solid 1px;
+    border-radius: 5px;
+}
+
+.high {
+    background-color: #dd9120;
+    border: #dd9120 solid 1px;
+    border-radius: 5px;
+}
+
+.very-high {
+    background-color: #ee300e;
+    border: #ee300e solid 1px;
+    border-radius: 5px;
+}
