@@ -12,6 +12,11 @@ hr {
     margin: 0px 15px 25px;
 }
 
+.forcast {
+    text-align: left;
+    list-style: none;
+}
+
 .hero {
     background-image: url("./images/bwca_hero_image.jpg");
     background-repeat: no-repeat;
@@ -28,12 +33,18 @@ hr {
     background-color: #fff;
     background-clip: border-box;
     border-radius: .25rem;
-    margin-bottom: 25px;
+    margin-bottom: 25px;    
 }
 
 .bg-black {
     background-color:#000000;
     color: #16ff50;
+}
+
+.bg-black-footer {
+    background-color:#000000;
+    color: #16ff50;
+    height: 200px;
 }
 
 .card-img-height {
@@ -82,4 +93,72 @@ hr {
     border: 1px solid #ced4da;
     border-radius: .25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.forecastCard {
+    display: flex;
+    flex-direction: column;    
+    flex: 1 1 auto;
+    min-height: 1px;
+    background-color: rgb(80, 80, 80);
+    color: white;
+    position: relative;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: rgb(59, 59, 59);
+    background-clip: border-box;
+    border-radius: .25rem;
+    padding: 8px;
+    margin-left: -15px;
+            
+    }
+
+/* .forecastCard h5 {
+    font-size: 14px;
+    font-weight:bold;
+}     */
+
+.card .card-body {
+    padding: 1.88rem 1.81rem
+    margin-bottom:25px;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    padding: 1.25rem
+}
+
+.card-weather .card-body {
+    background: #ffffff;
+    height: 200px;
+}
+
+.card-weather .weakly-weather {
+    background: #ffffff;
+    overflow-x: auto
+}
+
+.card-weather .weakly-weather .weakly-weather-item {
+    flex: 0 0 14.28%;
+    border-right: 1px solid #f2f2f2;
+    padding: 1rem;
+    text-align: center
+}
+
+.mb-0,
+.my-0 {
+    margin-bottom: 0 !important
+}
+
+.card-weather .weakly-weather .weakly-weather-item i {
+    font-size: 1.2rem
+}
+
+.mr-auto,
+.mx-auto {
+    margin-right: auto !important
+}
+
+.display-3 {
+    font-size: 3.5rem
 }
