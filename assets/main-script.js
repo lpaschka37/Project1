@@ -13,6 +13,9 @@ window.onload = function () {
 globalData = window.onload();
 console.log(globalData);
 
+var current = $("#current");
+var forecast = $("#forecast");
+
 
 var campgroundName = globalData.name;
 var parkName = globalData.id;
@@ -148,9 +151,6 @@ var parkName = globalData.id;
     //MAPS END
 
 //WEATHER SECTION
-var current = $("#current");
-var forecast = $("forecast");
-
 function callWeatherAPI() {
   var forecastArray = [];
   var lat = parkLat;
@@ -178,7 +178,7 @@ function callWeatherAPI() {
         icon: data.current.weather[0].icon
       };
       var forecastData = [];
-      for (i = 1; i < 6; i++) {
+      for (i = 1; i < 8; i++) {
         forecastData.push(
           {
             highTemp: data.daily[i].temp.max,
@@ -196,14 +196,18 @@ function callWeatherAPI() {
 function displayCurrentData(data) {
   console.log(data);
   current.html(`
-      <div class="currentCard"> 
-          <h2> 
-              ${city} &nbsp; (${date}) &nbsp; <img src="http://openweathermap.org/img/wn/${data.icon}@2x.png">
-          </h2>
-          <p> Temperature: ${KtoF(data.temp)}&#176;F </p>
-          <p> Humidity: ${data.humidity}% </p>
-          <p> Wind Speed: ${data.windSpeed} MPH </p>
-          <p> <span class="${uviWarning(data.uvi)}"> UV Index: ${data.uvi} </span> </p>
+      <div class="weather-date-location">
+          <h3>${moment().format('dddd')}</h3>
+          <p class="text-gray"> <span class="weather-date">${moment().format('MMMM Do, YYYY')}</span> </p>
+        </div>
+        <div class="weather-data d-flex">
+        <div class="mr-auto">
+            <img src="http://openweathermap.org/img/wn/${data.icon}@2x.png">
+            <p> Temperature: ${KtoF(data.temp)}&#176;F </p>
+            <p> Wind Speed: ${data.windSpeed} MPH </p>
+            <p> Humidity: ${data.humidity}% </p>
+            <p> <span class="${uviWarning(data.uvi)}"> UV Index: ${data.uvi} </span> </p>
+        </div>
       </div>`
   );
 }
@@ -211,9 +215,9 @@ function displayCurrentData(data) {
 function displayForecastData(data) {
   console.log(data);
   for (i = 0; i < data.length; i++) {
-      let day = moment().add(i+1,"days").format('dddd');
+      let day = moment().add(i+1,"days").format('ddd');
       forecast.children().children().eq(i).html(`
-          <div class="forecastCard"> 
+          <div class="forecastCard weekly-weather-item"> 
               <h5> 
                   ${day}
               </h5>
