@@ -24,7 +24,7 @@
                 <p class="lead"><span style="color: white;">This campground is awesome!!</span></p>
             </div>
         </div>
-        <div class="container">
+        <div class="container-fluid">
             <!-- row columns start here -->
             <div class="row">
             <!--card 1-->
@@ -46,7 +46,7 @@
             </div> 
             <hr />   
             <!--map card-->
-            <div class="cust-card col-md-6 col-sm-12">
+            <div class="cust-card col-lg-5 col-md-6 col-sm-12">
             <h5 class="card-title">Directions</h5>    
             <!-- <button onclick="getLocation()">Get Distance</button> KL Temporary button until campsite API is connected -->
             <div id="output">
@@ -57,10 +57,10 @@
             </div>
             
             <!--weather card-->
-            <div class="cust-card col-lg-6 col-md-4 col-sm-12">
+            <div class="cust-card col-lg-7 col-md-4 col-sm-12">
                 <h5 class="card-title">Weather Forecast</h5>    
             <!-- <img src="./assets/images/weather-forecast-background.png" class="display-height card-img-top" alt="placeholder"> -->
-            <div class="card card-weather">
+            <div class="card card-weather main-weather-card">
                 <div id="current" class="card-body">
                     <!-- <div class="weather-date-location">
                         <h3>Friday</h3>
@@ -69,41 +69,41 @@
                     <div class="weather-data d-flex">
                         <div class="mr-auto">
                             <h4 class="display-3">32 <span class="symbol">°</span>F</h4>
-                            <p>Wind Speed:</p>
-                            <p>Humidity:</p>
-                            <p>UN Index:</p>
+                            <p class="forcast-p">Wind Speed:</p>
+                            <p class="forcast-p">Humidity:</p>
+                            <p class="forcast-p">UN Index:</p>
                         </div>
                     </div> -->
                 </div>
                 <div id="forecast" class="card-body p-0">
                     <div class="d-flex weekly-weather">
                         <div class="weekly-weather-item">
-                            <p class="mb-0"> Sun </p> <i class="mdi mdi-weather-cloudy"></i>
-                            <p class="mb-0"> 30° </p>
+                            <p class="mb-0 forcast-p"> Sun </p> <i class="mdi mdi-weather-cloudy"></i>
+                            <p class="mb-0 forcast-p"> 30° </p>
                         </div>
                         <div class="weekly-weather-item">
-                            <p class="mb-1"> Mon </p> <i class="mdi mdi-weather-hail"></i>
-                            <p class="mb-0"> 31° </p>
+                            <p class="mb-1 forcast-p"> Mon </p> <i class="mdi mdi-weather-hail"></i>
+                            <p class="mb-0 forcast-p"> 31° </p>
                         </div>
                         <div class="weekly-weather-item">
-                            <p class="mb-1"> Tue </p> <i class="mdi mdi-weather-partlycloudy"></i>
-                            <p class="mb-0"> 28° </p>
+                            <p class="mb-1 forcast-p"> Tue </p> <i class="mdi mdi-weather-partlycloudy"></i>
+                            <p class="mb-0 forcast-p"> 28° </p>
                         </div>
                         <div class="weekly-weather-item">
-                            <p class="mb-1"> Wed </p> <i class="mdi mdi-weather-pouring"></i>
-                            <p class="mb-0"> 30° </p>
+                            <p class="mb-1 forcast-p"> Wed </p> <i class="mdi mdi-weather-pouring"></i>
+                            <p class="mb-0 forcast-p"> 30° </p>
                         </div>
                         <div class="weekly-weather-item">
-                            <p class="mb-1"> Thu </p> <i class="mdi mdi-weather-pouring"></i>
-                            <p class="mb-0"> 29° </p>
+                            <p class="mb-1 forcast-p"> Thu </p> <i class="mdi mdi-weather-pouring"></i>
+                            <p class="mb-0 forcast-p"> 29° </p>
                         </div>
                         <div class="weekly-weather-item">
-                            <p class="mb-1"> Fri </p> <i class="mdi mdi-weather-snowy-rainy"></i>
-                            <p class="mb-0"> 31° </p>
+                            <p class="mb-1 forcast-p"> Fri </p> <i class="mdi mdi-weather-snowy-rainy"></i>
+                            <p class="mb-0 forcast-p"> 31° </p>
                         </div>
                         <div class="weekly-weather-item">
-                            <p class="mb-1"> Sat </p> <i class="mdi mdi-weather-snowy"></i>
-                            <p class="mb-0"> 32° </p>
+                            <p class="mb-1 forcast-p"> Sat </p> <i class="mdi mdi-weather-snowy"></i>
+                            <p class="mb-0 forcast-p"> 32° </p>
                         </div>
                     </div>
                 </div>
@@ -113,8 +113,8 @@
     <footer>
         <div class="card text-center">
             <div class="card-body bg-black">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <h5 class="card-title">Camp Finder</h5>
+                <p class="card-text">Copyright 2021 &copy; Fullstack Course -- University of Minnesota</p>
             </div>
          </div>
     </footer>
