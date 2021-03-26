@@ -196,19 +196,21 @@ function callWeatherAPI() {
 function displayCurrentData(data) {
   console.log(data);
   current.html(`
-      <div class="weather-date-location">
-          <h3>${moment().format('dddd')}</h3>
-          <p class="text-gray"> <span class="weather-date">${moment().format('MMMM Do, YYYY')}</span> </p>
-        </div>
-        <div class="weather-data d-flex">
+    <div class="row">
+      <div class="weather-date-location col-6">
+        <h3>${moment().format('dddd')}</h3>
+        <p class="text-gray"> <span class="weather-date">${moment().format('MMMM Do, YYYY')}</span> </p>
+        <img src="http://openweathermap.org/img/wn/${data.icon}@2x.png">
+      </div>
+      <div class="weather-data d-flex col-6">
         <div class="mr-auto">
-            <img src="http://openweathermap.org/img/wn/${data.icon}@2x.png">
-            <p> Temperature: ${KtoF(data.temp)}&#176;F </p>
-            <p> Wind Speed: ${data.windSpeed} MPH </p>
-            <p> Humidity: ${data.humidity}% </p>
-            <p> <span class="${uviWarning(data.uvi)}"> UV Index: ${data.uvi} </span> </p>
+            <p class="daily-p"> Temperature: ${KtoF(data.temp)}&#176;F </p>
+            <p class="daily-p"> Wind Speed: ${data.windSpeed} MPH </p>
+            <p class="daily-p"> Humidity: ${data.humidity}% </p>
+            <p class="daily-p"> <span class="${uviWarning(data.uvi)}"> UV Index: ${data.uvi} </span> </p>
         </div>
-      </div>`
+      </div>
+    </div>`
   );
 }
 
@@ -222,9 +224,8 @@ function displayForecastData(data) {
                   ${day}
               </h5>
               <img src="http://openweathermap.org/img/wn/${data[i].icon}@2x.png">
-              <p> High: ${KtoF(data[i].highTemp)}&#176;F </p>
-              <p> Low: ${KtoF(data[i].lowTemp)}&#176;F </p>
-              <p> Humidity: ${data[i].humidity}% </p>
+              <p class="mb-0 forecast-p"> High: ${KtoF(data[i].highTemp)}&#176;F </p>
+              <p class="mb-0 forecast-p"> Low: ${KtoF(data[i].lowTemp)}&#176;F </p>
           </div>   
       `)
   }

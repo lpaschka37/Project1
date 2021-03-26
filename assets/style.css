@@ -11,6 +11,11 @@ hr {
     width: 100%;
     margin: 0px 15px 25px;
 }
+ #output {
+     padding-bottom: 15px;
+     font-size: 15px;
+ }
+
 
 .forcast {
     text-align: left;
@@ -53,7 +58,7 @@ hr {
 }
 
 .display-height {
-    height: 400px;
+    height: 500px;
     width: 100%;
 }
 
@@ -100,12 +105,11 @@ hr {
     flex-direction: column;    
     flex: 1 1 auto;
     min-height: 1px;
-    background-color: rgb(80, 80, 80);
-    color: white;
+    background-image: linear-gradient(#5353ff, #a9e0ff);
+    color: black;
     position: relative;
     min-width: 0;
-    word-wrap: break-word;
-    background-color: rgb(59, 59, 59);
+    word-wrap: break-word;    
     background-clip: border-box;
     border-radius: .25rem;
     padding: 8px;
@@ -113,17 +117,27 @@ hr {
             
     }
 
-/* .forecastCard h5 {
-    font-size: 14px;
-    font-weight:bold;
-}     */
+.main-weather-card {
+         position: relative;
+        display: -ms-flexbox;
+        display: flex;        
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border: 1px solid rgba(0,0,0,.125);
+        border-radius: .25rem;
+        padding-left: 20px;
+    
+}
 
 .card .card-body {
     padding: 1.88rem 1.81rem;
     margin-bottom: 35px;
 }
 
-.card-body {
+.card-body-index {
     flex: 1 1 auto;
     padding: 1.25rem
 }
@@ -161,4 +175,14 @@ hr {
 
 .display-3 {
     font-size: 3.5rem
+}
+
+.daily-p {
+    line-height: 20px;
+    /* padding: 0px; */
+}
+
+.forecast-p {
+    line-height: 20px;
+    /* padding: 0px; */
 }
