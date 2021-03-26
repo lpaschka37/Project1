@@ -124,7 +124,7 @@ hr {
         flex-direction: column;
         min-width: 0;
         word-wrap: break-word;
-        background-color: #fff;
+        background-image: linear-gradient(#b3e9ff, #fff); 
         background-clip: border-box;
         border: 1px solid rgba(0,0,0,.125);
         border-radius: .25rem;
@@ -143,18 +143,18 @@ hr {
 }
 
 .card-weather .card-body {
-    background: #ffffff;
+    /* background: #ffffff; */
    
 }
 
 .card-weather .weekly-weather {
-    background: #ffffff;
+    /* background: #ffffff; */
     overflow-x: auto
 }
 
 .card-weather .weekly-weather .weekly-weather-item {
     flex: 0 0 14.28%;
-    border-right: 1px solid #f2f2f2;
+    border-right: 1px solid #b3e9ff;
     padding: 1rem;
     text-align: center
 }
@@ -178,7 +178,9 @@ hr {
 }
 
 .daily-p {
-    line-height: 20px;
+    line-height: 25px;
+    font-size: 20px;
+    font-weight: bold;
     /* padding: 0px; */
 }
 
