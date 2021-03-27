@@ -50,7 +50,7 @@ Everyone had access to the GitHub Repo to push and pull updated code as needed.
 
 ```
 Camp Finder is an app for people who love camping and getting outdoors. Camp Finder uses information from National Parks based on the nerest city location. 
-This application will provide users with information about state parks loacted within a predetermined radius from the nearest city. Including directions and loal weather for the area.
+This application will provide users with information about state parks located within a predetermined radius from the nearest city. Includes directions and local weather for the area.
 
 ```
 
