@@ -16,11 +16,6 @@ console.log(globalData);
 var current = $("#current");
 var forecast = $("#forecast");
 
-
-var campgroundName = globalData.name;
-var parkName = globalData.id;
-
-
   
   //lat and long for intial page load
 	var parkLat = parseFloat(globalData.lat);
@@ -49,7 +44,7 @@ var parkName = globalData.id;
     alert("You dont have your location enabled in this browser.")
   }
 		//Geolocation API end
-  initMap();
+  // initMap();
 		
 		//Google Distance Matrix API start (get distance and time between addresses)
 		//Came from Google maps API documentation. Variables and objects changed for current project. 
@@ -249,3 +244,90 @@ function uviWarning(uvi) {
       return "very-high";
   }
 }
+
+//DETAILS SECTION
+
+function callNpAPI() {
+  var campgroundName = globalData.name.replace("%20", " ");
+  for (i=0; i<10; i++) {
+    campgroundName = campgroundName.replace("%20", " ");
+  }
+  var parkName = globalData.id;
+  var siteInfo = {
+    description: "",
+    image: "",
+    amenities: ""
+  };
+  console.log(parkName);
+  console.log(campgroundName);
+
+  var link = "https://developer.nps.gov/api/v1/campgrounds";
+  const requestUrl = new URL(link);
+
+  //requestUrl.append( format.val() );
+  requestUrl.searchParams.append("parkCode", parkName);
+  requestUrl.searchParams.append("limit", "20");
+  requestUrl.searchParams.append("api_key", "6SDR47MbfpKKDCjjWmITe9DOzwm3YU790sDLbeQZ" );
+
+  console.log(requestUrl);
+
+  fetch(requestUrl)
+  .then(function (response) {
+      return response.json();
+  })
+  .then(function (campdata) {
+      console.log(campdata);
+      for (i=0; i<campdata.data.length; i++) {
+          if (campdata.data[i].name == campgroundName) {
+            siteInfo = {
+              description: campdata.data[i].description,
+              image: campdata.data[i].images,
+              amenities: campdata.data[i].amenities,
+              siteName: campdata.data[i].name
+            }
+          }
+      }
+      displayInfo(siteInfo);
+      console.log(siteInfo);
+  });
+}
+
+function displayInfo(siteInfo) {
+    console.log(siteInfo);
+    var imageUrl = "";
+    var imageAlt = "";
+    var image = $("#campsite-image");
+    var description = $("#description");
+    var campName = $("#campground-name");
+    var amenities = $("ul");
+    var amenity = $("<li>");
+
+    if (siteInfo.image == null) {
+        imageUrl = "./assets/images/placeholder.gif";
+        imageAlt = "Placeholder Image"
+    }
+    else {
+        imageUrl = siteInfo.image[0].url;
+        imageAlt = siteInfo.image[0].altText;
+    }
+    image.html(`
+      <img id="campsite-image" src=${imageUrl} class="card-img-top" alt=${imageAlt}>
+    `);
+    description.text(siteInfo.description);
+    campName.text(siteInfo.siteName);
+
+    amenity.text("Firewood For Sale?: " + siteInfo.amenities.firewoodForSale);
+    amenities.append(amenity);
+    amenity.text("Toilets: " + siteInfo.amenities.toilets[0]);
+    amenities.append(amenity);
+    amenity.text("Food Storage Lockers?: " + siteInfo.amenities.foodStorageLockers);
+    amenities.append(amenity);
+
+    amenities.html(`
+        <li> Firewood For Sale?:  ${siteInfo.amenities.firewoodForSale} </li>
+        <li> Toilets:  ${siteInfo.amenities.toilets[0]} </li>
+        <li> Food Storage Lockers?:  ${siteInfo.amenities.foodStorageLockers} </li>
+    `)
+}
+
+callNpAPI();
