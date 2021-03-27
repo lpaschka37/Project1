@@ -302,7 +302,7 @@ function displayInfo(siteInfo) {
     var amenities = $("ul");
     var amenity = $("<li>");
 
-    if (siteInfo.image == null) {
+    if (siteInfo.image[0] == null) {
         imageUrl = "./assets/images/placeholder.gif";
         imageAlt = "Placeholder Image"
     }
