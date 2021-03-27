@@ -82,7 +82,7 @@ Add feature to maps function to get directions to chosen park.
 
 
 ## Authors
-Authors:<br />
+S
 Luke Paschka: https://github.com/lpaschka37 <br />
 Kelsie Lewis: https://github.com/kelsie51 <br />
 Levi Schwartzberg: https://github.com/Levischwartzberg <br />
