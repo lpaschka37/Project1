@@ -13,6 +13,7 @@ searchForm.on("click", "#searchBtn", getCity);
 //Calls city coordinate search after the search button is clicked for a city
 function getCity() {
     event.preventDefault();
+    campSites = [];
     var city = citySearch.val();
     callAPI(city);
 }
