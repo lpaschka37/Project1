@@ -1,12 +1,12 @@
 # Project1
-First group project
+Campground Finder (Group Project 1)
 
 ## Table of Contents
 
 * [Usage](#usage)
 * [Acceptance Criteria](#Acceptance_Criteria)
 * [Project Notes](#Project_Notes)
-* [Project Description](#Project_Criteria)
+* [Project Description](#Project_Description)
 * [Resources](#Resources)
 * [Deliverable](#deliverable)
 * [Roadmap](#Roadmap)
@@ -26,13 +26,13 @@ SO THAT I can plan a trip accordingly.
 ## Acceptance_Criteria
 
 ```
-GIVEN Camp Locator Locator
+GIVEN Camp Finding Application
 WHEN I search for a city display campground locations
 THEN I am presented with a list of campground locations with in a predetermined radius.
 WHEN I click "get Details" button I am taken to a new page.
 THEN I am presented with additional campground details, directions and local weather forecast. 
 WHEN I click "Back to Home" button I am returned to the home page.
-THEN I can enter another city to search
+THEN I can enter another city to search or choose a different campground. 
 
 ```
 
@@ -82,7 +82,7 @@ Add feature to maps function to get directions to chosen park.
 
 
 ## Authors
-S
+
 Luke Paschka: https://github.com/lpaschka37 <br />
 Kelsie Lewis: https://github.com/kelsie51 <br />
 Levi Schwartzberg: https://github.com/Levischwartzberg <br />
