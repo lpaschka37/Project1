@@ -352,6 +352,27 @@ function callNpAPI() {
   });
 }
 
+function callNameAPI() {
+  var link = "https://developer.nps.gov/api/v1/parks";
+  const requestUrl = new URL(link);
+  var parkNameId = globalData.id;
+  var natParkName = $("#park-name");
+
+  //requestUrl.append( format.val() );
+  requestUrl.searchParams.append("parkCode", parkNameId);
+  requestUrl.searchParams.append("limit", "20");
+  requestUrl.searchParams.append("api_key", "6SDR47MbfpKKDCjjWmITe9DOzwm3YU790sDLbeQZ" );
+
+  fetch(requestUrl)
+  .then(function (response) {
+      return response.json();
+  })
+  .then(function (parkdata) {
+      console.log(parkdata);
+      natParkName.text(parkdata.data[0].fullName);
+  });
+}
+
 function displayInfo(siteInfo) {
     console.log(siteInfo);
     var imageUrl = "";
@@ -377,9 +398,9 @@ function displayInfo(siteInfo) {
     campName.text(siteInfo.siteName);
 
     amenities.html(`
-        <li> Firewood For Sale?:  ${siteInfo.amenities.firewoodForSale} </li>
-        <li> Toilets:  ${siteInfo.amenities.toilets[0]} </li>
-        <li> Food Storage Lockers?:  ${siteInfo.amenities.foodStorageLockers} </li>
+        <li> <span style="font-weight: bold"> Firewood For Sale?: </span> ${siteInfo.amenities.firewoodForSale} </li>
+        <li> <span style="font-weight: bold"> Toilets: </span> ${siteInfo.amenities.toilets[0]} </li>
+        <li> <span style="font-weight: bold"> Food Storage Lockers?: </span> ${siteInfo.amenities.foodStorageLockers} </li>
     `);
 
     parkLink.text(siteInfo.url);
@@ -387,3 +408,4 @@ function displayInfo(siteInfo) {
 }
 
 callNpAPI();
+callNameAPI();
