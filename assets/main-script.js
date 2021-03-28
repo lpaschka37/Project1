@@ -377,9 +377,9 @@ function displayInfo(siteInfo) {
     campName.text(siteInfo.siteName);
 
     amenities.html(`
-        <li> Firewood For Sale?:  ${siteInfo.amenities.firewoodForSale} </li>
-        <li> Toilets:  ${siteInfo.amenities.toilets[0]} </li>
-        <li> Food Storage Lockers?:  ${siteInfo.amenities.foodStorageLockers} </li>
+        <li> <span style="font-weight: bold"> Firewood For Sale?: </span> ${siteInfo.amenities.firewoodForSale} </li>
+        <li> <span style="font-weight: bold"> Toilets: </span> ${siteInfo.amenities.toilets[0]} </li>
+        <li> <span style="font-weight: bold"> Food Storage Lockers?: </span> ${siteInfo.amenities.foodStorageLockers} </li>
     `);
 
     parkLink.text(siteInfo.url);
