@@ -27,7 +27,7 @@
         <div class="container-fluid">
             <!-- row columns start here -->
             <div class="row">
-            <!--card 1-->
+            <!--main card-->
             <div class="cust-card col-lg-5 col-md-6 col-sm-12">
             <div id="campsite-image">
                 <img src="./assets/images/Yosemite.jpg" class="card-img-top" alt="placeholder">    
@@ -37,31 +37,35 @@
                 <div class="card-body">
                     <h5 id="campground-name" class="card-title"></h5>
                     <p id="description" class="card-text"></p>
+                    <h6>Park Link</h6>
+                    <a target="_blank" id="link" href=""></a>
+                    <br />
+                    <h6 style="margin-top:15px;">Park Amenities:</h6>
                     <ul id="amenities">
-                    </ul>    
+                    </ul>                                         
                     <a href="index.html" class="btn btn-primary">Back to Home</a>
-                    <h5>Park Link</h5>
-                    <a id="link" href=""></a>
                 </div>
             </div> 
             <hr />   
             <!--map card-->
             <div class="cust-card col-lg-5 col-md-6 col-sm-12">
-            <h5 class="card-title" id="mapType">Distance</h5>    
+            <h5 class="card-title" id="mapType">Distance</h5> 
+            
+            <!-- get directions button -->   
             <button id="btnMap" onclick="initdirections()" class="btn btn-primary">Get Directions</button> 
             <select id="mode" class="hide">
                 <option value="DRIVING">Driving</option>               
                 <option value="BICYCLING">Bicycling</option>               
               </select>
             <div id="output">
-                <!-- KL Map distance and duration data goes here -->
+                <!-- Map distance and duration data goes here -->
             </div>
             <div id="map" class="display-height card-img-top"></div>
                 <!--map displays here-->
             </div>
             
             <!--weather card-->
-            <div class="cust-card col-lg-7 col-md-4 col-sm-12">
+            <div class="cust-card col-lg-7 col-md-6 col-sm-12">
                 <h5 class="card-title">Weather Forecast</h5>    
             <div class="card card-weather main-weather-card">
                 <div id="current" class="card-body">
@@ -81,32 +85,32 @@
                 <div id="forecast" class="card-body p-0">
                     <div class="d-flex weekly-weather">
                         <div class="weekly-weather-item">
-                            <p class="mb-0 forcast-p"> Sun </p> <i class="mdi mdi-weather-cloudy"></i>
-                            <p class="mb-0 forcast-p"> 30° </p>
+                            <p class="mb-0 forcast-p"></p>
+                            <p class="mb-0 forcast-p"></p>
                         </div>
                         <div class="weekly-weather-item">
-                            <p class="mb-1 forcast-p"> Mon </p> <i class="mdi mdi-weather-hail"></i>
-                            <p class="mb-0 forcast-p"> 31° </p>
+                            <p class="mb-1 forcast-p"></p>
+                            <p class="mb-0 forcast-p"></p>
                         </div>
                         <div class="weekly-weather-item">
-                            <p class="mb-1 forcast-p"> Tue </p> <i class="mdi mdi-weather-partlycloudy"></i>
-                            <p class="mb-0 forcast-p"> 28° </p>
+                            <p class="mb-1 forcast-p"></p>
+                            <p class="mb-0 forcast-p"></p>
                         </div>
                         <div class="weekly-weather-item">
-                            <p class="mb-1 forcast-p"> Wed </p> <i class="mdi mdi-weather-pouring"></i>
-                            <p class="mb-0 forcast-p"> 30° </p>
+                            <p class="mb-1 forcast-p"></p>
+                            <p class="mb-0 forcast-p"></p>
                         </div>
                         <div class="weekly-weather-item">
-                            <p class="mb-1 forcast-p"> Thu </p> <i class="mdi mdi-weather-pouring"></i>
-                            <p class="mb-0 forcast-p"> 29° </p>
+                            <p class="mb-1 forcast-p"></p>
+                            <p class="mb-0 forcast-p"></p>
                         </div>
                         <div class="weekly-weather-item">
-                            <p class="mb-1 forcast-p"> Fri </p> <i class="mdi mdi-weather-snowy-rainy"></i>
-                            <p class="mb-0 forcast-p"> 31° </p>
+                            <p class="mb-1 forcast-p"></p>
+                            <p class="mb-0 forcast-p"></p>
                         </div>
                         <div class="weekly-weather-item">
-                            <p class="mb-1 forcast-p"> Sat </p> <i class="mdi mdi-weather-snowy"></i>
-                            <p class="mb-0 forcast-p"> 32° </p>
+                            <p class="mb-1 forcast-p"></p>
+                            <p class="mb-0 forcast-p"></p>
                         </div>
                     </div>
                 </div>

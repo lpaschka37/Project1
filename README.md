@@ -75,8 +75,10 @@ Live Link:  https://lpaschka37.github.io/Project1/
 Roadmap
 Future ideas for app imrovements:
 
+
 Add addional search criteria features, such as parks by activity, or offer users addional options to narrow park search.
-Add feature to maps function to get directions to chosen park.
+Allow for more returned results to paginate if results reach designated page limit.
+
 
 ```
 
