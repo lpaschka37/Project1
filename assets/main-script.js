@@ -162,16 +162,20 @@ var parkName = globalData.id;
       });
       directionsRenderer.setMap(map);
 
-      if(document.querySelector('#btnMap').innerHTML === 'Get Distance')
+      //Toggle logic
+      if(document.querySelector('#btnMap').innerHTML === 'Get Directions')
       {
         calculateAndDisplayRoute(directionsService, directionsRenderer);
-        document.querySelector('#btnMap').innerHTML = 'Get Directions';
+        document.querySelector('#btnMap').innerHTML = 'Get Distance';
         document.getElementById("mode").classList.remove("hide");
+        document.getElementById("mapType").innerHTML="Directions";
+        
       }
       else{
         initMap();
-        document.querySelector('#btnMap').innerHTML = 'Get Distance';
+        document.querySelector('#btnMap').innerHTML = 'Get Directions';
         document.getElementById("mode").classList.add("hide");
+        document.getElementById("mapType").innerHTML="Distance";
       }
 
 
