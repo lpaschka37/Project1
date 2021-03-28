@@ -9,6 +9,7 @@ Campground Finder (Group Project 1)
 * [Project Description](#Project_Description)
 * [Resources](#Resources)
 * [Deliverable](#deliverable)
+* [Site Links](#Site_Links)
 * [Roadmap](#Roadmap)
 * [Authors](#Authors)
 * [Badges](#Badges)
@@ -64,8 +65,15 @@ National Parks Servicve: https://developer.nps.gov/api/v1/campgrounds
 
 
 ## Deliverable
+Home Page:
 ![Screenshot](./assets/images/Screen_Capture_P1.png)
-<br>
+
+Main Page:
+![Screenshot](./assets/images/Screenshot2_CampFinder.png)
+
+
+## Site_Links
+
 GitHub: https://github.com/lpaschka37/Project1<br />
 Live Link:  https://lpaschka37.github.io/Project1/
 
@@ -78,6 +86,7 @@ Future ideas for app imrovements:
 
 Add addional search criteria features, such as parks by activity, or offer users addional options to narrow park search.
 Allow for more returned results to paginate if results reach designated page limit.
+Allow previous search to remain on page after returing from redirect.
 
 
 ```
