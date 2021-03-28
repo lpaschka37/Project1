@@ -148,6 +148,61 @@ var parkName = globalData.id;
         markersArray = [];
       }
 	  //Google Distance Matrix API end
+
+    function initdirections() {
+      document.getElementById("map").innerHTML = "";
+      document.getElementById("output").innerHTML = "";
+      document.getElementById("mode").classList.remove("hide");
+     // document.querySelector('#btnMap').innerHTML = 'Get Distance';
+      const directionsRenderer = new google.maps.DirectionsRenderer();
+      const directionsService = new google.maps.DirectionsService();
+      const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 14,
+        center: { lat: parkLat, lng: parkLon},
+      });
+      directionsRenderer.setMap(map);
+
+      if(document.querySelector('#btnMap').innerHTML === 'Get Distance')
+      {
+        calculateAndDisplayRoute(directionsService, directionsRenderer);
+        document.querySelector('#btnMap').innerHTML = 'Get Directions';
+        document.getElementById("mode").classList.remove("hide");
+      }
+      else{
+        initMap();
+        document.querySelector('#btnMap').innerHTML = 'Get Distance';
+        document.getElementById("mode").classList.add("hide");
+      }
+
+
+
+      document.getElementById("mode").addEventListener("change", () => {
+        calculateAndDisplayRoute(directionsService, directionsRenderer);
+      });
+      
+    }
+
+    function calculateAndDisplayRoute(directionsService, directionsRenderer) {
+      const selectedMode = document.getElementById("mode").value;
+      directionsService.route(
+        {
+          origin:{ lat: lat1, lng: long1 },
+          destination: { lat: parkLat, lng: parkLon},
+          // Note that Javascript allows us to access the constant
+          // using square brackets and a string value as its
+          // "property."
+          travelMode: google.maps.TravelMode[selectedMode],
+        },
+        (response, status) => {
+          if (status == "OK") {
+            directionsRenderer.setDirections(response);
+          } else {
+            window.alert("Directions request failed due to " + status);
+          }
+        }
+      );
+    }
+
     //MAPS END
 
 //WEATHER SECTION

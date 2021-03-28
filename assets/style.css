@@ -212,3 +212,6 @@ hr {
     border: #ee300e solid 1px;
     border-radius: 5px;
 }
+.hide{
+    display: none;
+}
