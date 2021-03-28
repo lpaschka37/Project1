@@ -342,7 +342,8 @@ function callNpAPI() {
               description: campdata.data[i].description,
               image: campdata.data[i].images,
               amenities: campdata.data[i].amenities,
-              siteName: campdata.data[i].name
+              siteName: campdata.data[i].name,
+              url: campdata.data[i].url
             }
           }
       }
@@ -359,7 +360,7 @@ function displayInfo(siteInfo) {
     var description = $("#description");
     var campName = $("#campground-name");
     var amenities = $("ul");
-    var amenity = $("<li>");
+    var parkLink = $("#link");
 
     if (siteInfo.image[0] == null) {
         imageUrl = "./assets/images/placeholder.gif";
@@ -375,18 +376,14 @@ function displayInfo(siteInfo) {
     description.text(siteInfo.description);
     campName.text(siteInfo.siteName);
 
-    amenity.text("Firewood For Sale?: " + siteInfo.amenities.firewoodForSale);
-    amenities.append(amenity);
-    amenity.text("Toilets: " + siteInfo.amenities.toilets[0]);
-    amenities.append(amenity);
-    amenity.text("Food Storage Lockers?: " + siteInfo.amenities.foodStorageLockers);
-    amenities.append(amenity);
-
     amenities.html(`
         <li> Firewood For Sale?:  ${siteInfo.amenities.firewoodForSale} </li>
         <li> Toilets:  ${siteInfo.amenities.toilets[0]} </li>
         <li> Food Storage Lockers?:  ${siteInfo.amenities.foodStorageLockers} </li>
-    `)
+    `);
+
+    parkLink.text(siteInfo.url);
+    parkLink.attr("href", siteInfo.url);
 }
 
 callNpAPI();
