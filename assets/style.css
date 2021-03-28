@@ -141,10 +141,6 @@ hr {
     padding: 1.25rem
 }
 
-/* .card-weather .card-body {
-    background: #ffffff;
-   
-} */
 
 .card-weather .weekly-weather {
     /* background: #ffffff; */
@@ -211,6 +207,7 @@ hr {
     border: #ee300e solid 1px;
     border-radius: 5px;
 }
+
 .hide{
     display: none;
 }
