@@ -45,8 +45,12 @@
             <hr />   
             <!--map card-->
             <div class="cust-card col-lg-5 col-md-6 col-sm-12">
-            <h5 class="card-title">Directions</h5>    
-            <!-- <button onclick="getLocation()">Get Distance</button> KL Temporary button until campsite API is connected -->
+            <h5 class="card-title" id="mapType">Distance</h5>    
+            <button id="btnMap" onclick="initdirections()" class="btn btn-primary">Get Directions</button> 
+            <select id="mode" class="hide">
+                <option value="DRIVING">Driving</option>               
+                <option value="BICYCLING">Bicycling</option>               
+              </select>
             <div id="output">
                 <!-- KL Map distance and duration data goes here -->
             </div>
