@@ -68,7 +68,7 @@ National Parks Servicve: https://developer.nps.gov/api/v1/campgrounds
 
 ## Deliverable
 Home Page:
-![Screenshot](./assets/images/Screen_Capture_P1.PNG)s
+![Screenshot](./assets/images/Screen_Capture_P1.PNG)
 
 Main Page:
 ![Screenshot](./assets/images/Screenshot2_CampFinder.png)
