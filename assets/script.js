@@ -150,10 +150,10 @@ function displayCampsites(campSites) {
         }
         card.html(`
             <img src="${imageUrl}" class="card-img-height card-img-top" alt="${imageAlt}">
-            <div class="card-body-index">
+            <div class="card-body-index d-flex flex-column">
                 <h5 class="card-title">${campSites[i].parkName}</h5>
                 <p class="card-text">${campSites[i].description}</p>                        
-                <a id="go" index="${i}" class="btn btn-primary">Get Details</a>
+                <a id="go" index="${i}" class="mt-auto btn btn-primary">Get Details</a>
             </div>
         `)
     }
