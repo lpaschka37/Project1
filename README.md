@@ -52,8 +52,8 @@ Isaiah offered to help with a lot of the fine tuning details of the project. He 
 ## Project_Description
 
 ```
-Camp Finder is an app for people who love camping and getting outdoors. Camp Finder uses information from National Parks based on the nerest city location. 
-This application will provide users with information about state parks located within a predetermined radius from the nearest city. Includes directions and local weather for the area.
+Camp Finder is an app for people who love camping and getting outdoors. Camp Finder uses information from National Parks based on the nearest city location. 
+This application will provide users with information about the closest state parks located nearest to the chosen city. Includes directions and local weather for the area.
 
 ```
 
