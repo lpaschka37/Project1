@@ -165,6 +165,6 @@ function transferData(event) {
     console.log("test");
     var index = ($(this).parent().children().eq(2)).attr("index");
 
-    url = "main.html?lat=" + campSites[index].lat + "&lon=" + campSites[index].lon + "&id=" +campSites[index].campid +"&name=" +campSites[index].parkName;
+    url = "https://lpaschka37.github.io/Project1/?lat=" + campSites[index].lat + "&lon=" + campSites[index].lon + "&id=" +campSites[index].campid +"&name=" +campSites[index].parkName;
     document.location.href = url;
 }
